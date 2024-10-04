@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+
+<h1>Blog Posts</h1>
+<a href="/submit-post">Submit a new post</a>
+<ul>
+  <% if (posts.length > 0) { %>
+    <% posts.forEach(post => { %>
+      <li>
+        <h3><%= post.title %></h3>
+        <p><%= post.content.substring(0, 100) %>...</p>
+        <a href="/post/<%= post.id %>">Read More</a>
+        <button class="edit-post" data-id="<%= post.id %>">Edit</button>
+        <button class="patch-post" data-id="<%= post.id %>">Patch</button>
+        <button class="delete-post" data-id="<%= post.id %>">Delete</button>
+      </li>
+    <% }) %>
+  <% } else { %>
+    <p>No posts available.</p>
+  <% } %>
+</ul>
+
+<%- include('partials/footer.ejs') %>

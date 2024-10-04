@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<button class="edit-post" data-id="<%= post.id %>">Edit</button>
+<button class="patch-post" data-id="<%= post.id %>">Patch</button>
+<button class="delete-post" data-id="<%= post.id %>">Delete</button>
+
+<a href="/blog">Back to Blog</a>
+
+<%- include('partials/footer.ejs') %>

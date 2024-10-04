@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') %>
+
+<h1>Submit a New Post</h1>
+
+<form action="/submit-post" method="POST" enctype="multipart/form-data">
+  <input type="text" name="title" placeholder="Title" required />
+  <textarea name="content" placeholder="Content" required></textarea>
+  <input type="file" name="image" accept="image/*" required />
+  <button type="submit">Submit</button>
+</form>
+
+<a href="/blog">Back to Blog</a>
+
+<%- include('partials/footer.ejs') %>
